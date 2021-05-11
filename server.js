@@ -29,31 +29,32 @@ app.use(cors());
 app.use(express.json());
 
 // temporary database, not being used anymore, just put it here for lateral reference
-const database = {
-    users: [
-        {
-            id: '123',
-            name: 'John',
-            email: 'john@gmail.com',
-            password: 'cookies',
-            entries: 0,
-            joined: new Date()
-        },
-        {
-            id: '124',
-            name: 'nhung',
-            email: 'nhung@gmail.com',
-            password: 'bananas',
-            entries: 0,
-            joined: new Date()
-        }
-    ]
+// const database = {
+//     users: [
+//         {
+//             id: '123',
+//             name: 'John',
+//             email: 'john@gmail.com',
+//             password: 'cookies',
+//             entries: 0,
+//             joined: new Date()
+//         },
+//         {
+//             id: '124',
+//             name: 'nhung',
+//             email: 'nhung@gmail.com',
+//             password: 'bananas',
+//             entries: 0,
+//             joined: new Date()
+//         }
+//     ]
 
-}
+// }
 
 // not being used anymore, just put it here for lateral reference
 app.get('/', (req, res) => {
-    res.send(database.users);
+    // res.send(database.users);
+    res.send('it is working');
 })
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt)})
